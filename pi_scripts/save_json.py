@@ -3,7 +3,7 @@ import json
 def save_to_json(data,filename):
     try:
         with open (filename,'w') as f:
-            print(f'[SUCCES] Date încărcate din: {filename}')
+            print(f'[SUCCES] Date salvate din: {filename}')
             json.dump(data,f,indent=4)
     except Exception as e:
         print(f"Error: {e}")

@@ -19,4 +19,4 @@ def get_vendor(mac, oui_file="pi_scripts/nmap_oui_database.txt"):
     return "Unknown"
 
 
-print(get_vendor("60-E9-AA-2B-7D-31"))
+#print(get_vendor("60-E9-AA-2B-7D-31"))
