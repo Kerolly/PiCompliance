@@ -1,6 +1,10 @@
 import nmap
 from save_json import save_to_json
 
+from admin_privileges import ensure_elevated
+
+ensure_elevated()
+
 
 def nmap_hosts_scan(ip_range):
 
