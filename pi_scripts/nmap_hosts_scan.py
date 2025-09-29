@@ -27,7 +27,7 @@ def nmap_hosts_scan(ip_range):
 
         results.append ({
             "ip": scanner[host]['addresses'].get('ipv4') or "Unknown",
-            "mac": scanner[host]['addresses'].get('mac') or "Unknown"
+             "mac": scanner[host]['addresses'].get('mac') if 'mac' in scanner[host]['addresses'] else "Not available"
         })
 
     print("--->Scan complete")
@@ -44,4 +44,4 @@ def nmap_hosts_scan(ip_range):
     return results
 
 if __name__ == "__main__":
-    nmap_hosts_scan("10.132.86.0-100")
+    nmap_hosts_scan("10.132.86.0/24")
