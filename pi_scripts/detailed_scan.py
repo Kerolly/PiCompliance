@@ -25,6 +25,7 @@ def get_device_info(ip):
 
     if host not in scanner.all_hosts():
         print(f"No information found for {host}")
+        return None, [] 
         # return something
     else:
         # General info
@@ -35,7 +36,8 @@ def get_device_info(ip):
         # --- OS Detection NMAP ---
         os_info = get_os_namp(host_info)
         if os_info is None:
-            print("No OS information available")
+            return None, None
+            # print("No OS information available")
 
         
              
