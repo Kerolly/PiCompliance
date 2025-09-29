@@ -4,6 +4,7 @@ from detailed_scan import get_device_info
 from save_json import save_to_json
 from admin_privileges import ensure_elevated
 import socket
+import ipaddress
 from vendor_scanner import get_vendor
 
 ensure_elevated()
@@ -20,9 +21,6 @@ def get_ip():
         s.close()
     except Exception as e:
         print(f'Error:{e}')
-
-import socket
-import ipaddress
 
 def get_cidr():
     try:
