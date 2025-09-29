@@ -1,5 +1,7 @@
 import nmap
+from admin_privileges import ensure_elevated
 
+ensure_elevated()
 
 def get_device_info(ip):
     scanner = nmap.PortScanner()
