@@ -12,14 +12,34 @@ global scan_results
 scan_results = []
 
 def get_ip():
-    my_ip = socket.gethostbyname(socket.getfqdn())
-    cidr = '.'.join(my_ip.split('.')[:3]) + '.0/24'
-    #print("CIDR Notation:", cidr)
-    #print("IP Address:", my_ip)
-    return cidr
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+        s.close()
+    except Exception as e:
+        print(f'Error:{e}')
+
+import socket
+import ipaddress
+
+def get_cidr():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+        s.close()
+        
+        net = ipaddress.IPv4Network(f"{ip}/24", strict=False)
+        return str(net)
+    except Exception:
+        return None
+
 
 def scan_network():
-    ip_mac_list = nmap_hosts_scan(get_ip())
+    ip_mac_list = nmap_hosts_scan(get_cidr())
 
     founded_devices = len(ip_mac_list)
     counter = 1

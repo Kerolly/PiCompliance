@@ -9,9 +9,17 @@
     },
     {
         "ip": "192.168.27.204",
-        "mac": "60-E9-AA-2B-7D-31",
+        "mac": "60:E9:AA:2B:7D:31",
         "vendor": "Cloud Network Technology Singapore PTE.",
-        "hostname": "DESKTOP-78HODI4",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": null
+    },
+    {
+        "ip": "192.168.27.33",
+        "mac": "2c:cf:67:38:50:37",
+        "vendor": "Raspberry Pi (Trading)",
+        "hostname": "Unknown",
         "os": null,
         "ports": null
     }

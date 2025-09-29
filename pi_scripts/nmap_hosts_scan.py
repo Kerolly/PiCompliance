@@ -9,18 +9,17 @@ ensure_elevated()
 
 def get_scanning_device_mac():
     try:
-        my_hostname = socket.gethostname()
-        local_ip = socket.gethostbyname(my_hostname)
-        print(f"My hostname: {my_hostname}")
-        print(f"My IP address: {local_ip}")
+        
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8', 80))
+        local_ip = s.getsockname()[0]
+        s.close()
 
         local_mac = None
-
         for iface, addrs in psutil.net_if_addrs().items():
-            # Check if this interface has the local IP
             for addr in addrs:
                 if addr.family == socket.AF_INET and addr.address == local_ip:
-                    # Found the interface with the local IP, now get its MAC address
+                    
                     for mac_addr in addrs:
                         if mac_addr.family in (psutil.AF_LINK, getattr(socket, 'AF_PACKET', 17)):
                             local_mac = mac_addr.address
@@ -28,13 +27,11 @@ def get_scanning_device_mac():
                     break
             if local_mac:
                 break
-                
-        print(f"My MAC address: {local_mac}")
+
         return local_ip, local_mac
-    
     except Exception as e:
-        print(f"Could not get the mac address: {e}")
-        return "Unknown"
+        print(f"Could not get IP/MAC: {e}")
+        return None, None
 
 
 def nmap_hosts_scan(ip_range):
