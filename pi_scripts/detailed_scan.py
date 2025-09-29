@@ -119,4 +119,4 @@ def get_ports_info(host_info):
 
 
 if __name__ == "__main__":
-    get_device_info("192.168.27.165")
+    get_device_info("192.168.27.110")
