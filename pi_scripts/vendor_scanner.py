@@ -1,6 +1,5 @@
-
 def get_vendor(mac, oui_file="pi_scripts/nmap_oui_database.txt"):
-    prefix = mac.replace(":", "").upper()[:6]
+    prefix = mac.replace(":", "").replace("-", "").upper()[:6]
 
     try:
         with open(oui_file, "r", encoding="utf-8", errors="ignore") as f:
@@ -20,4 +19,4 @@ def get_vendor(mac, oui_file="pi_scripts/nmap_oui_database.txt"):
     return "Unknown"
 
 
-print(get_vendor("28:D0:43:87:36:A6"))
+print(get_vendor("60-E9-AA-2B-7D-31"))

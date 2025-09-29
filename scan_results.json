@@ -4,77 +4,15 @@
         "mac": "C6:BB:67:05:61:F9",
         "vendor": "Unknown",
         "hostname": "Unknown",
-        "os": {
-            "os_match": "Aruba ArubaOS-CX 10.04",
-            "vendor": "Aruba",
-            "accuracy": "93",
-            "family": "ArubaOS-CX",
-            "generation": "10.X"
-        },
-        "ports": [
-            {
-                "port": 53,
-                "state": "open",
-                "service": "domain",
-                "product": "dnsmasq",
-                "version": "2.51",
-                "extrainfo": null
-            }
-        ]
+        "os": null,
+        "ports": null
     },
     {
         "ip": "192.168.27.204",
-        "mac": "Not available",
+        "mac": "60-E9-AA-2B-7D-31",
         "vendor": "Unknown",
         "hostname": "DESKTOP-78HODI4",
-        "os": {
-            "os_match": "Microsoft Windows 10 1809 - 21H2",
-            "vendor": "Microsoft",
-            "accuracy": "100",
-            "family": "Windows",
-            "generation": "10"
-        },
-        "ports": [
-            {
-                "port": 135,
-                "state": "open",
-                "service": "msrpc",
-                "product": "Microsoft Windows RPC",
-                "version": null,
-                "extrainfo": null
-            },
-            {
-                "port": 139,
-                "state": "open",
-                "service": "netbios-ssn",
-                "product": "Microsoft Windows netbios-ssn",
-                "version": null,
-                "extrainfo": null
-            },
-            {
-                "port": 445,
-                "state": "open",
-                "service": "microsoft-ds",
-                "product": null,
-                "version": null,
-                "extrainfo": null
-            },
-            {
-                "port": 3306,
-                "state": "open",
-                "service": "mysql",
-                "product": "MySQL",
-                "version": null,
-                "extrainfo": "unauthorized"
-            },
-            {
-                "port": 5357,
-                "state": "open",
-                "service": "http",
-                "product": "Microsoft HTTPAPI httpd",
-                "version": "2.0",
-                "extrainfo": "SSDP/UPnP"
-            }
-        ]
+        "os": null,
+        "ports": null
     }
 ]
