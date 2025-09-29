@@ -1,4 +1,5 @@
 import nmap
+from save_json import save_to_json
 
 
 def nmap_hosts_scan(ip_range):
@@ -37,6 +38,8 @@ def nmap_hosts_scan(ip_range):
         print(f"IP: {result['ip']}, MAC: {result['mac']}")
 
     print("==========================================\n")
+
+    save_to_json(results, "nmap_ips_scan.json")
 
     return results
 
