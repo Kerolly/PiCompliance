@@ -88,8 +88,7 @@ def get_os_namp(host_info):
                     return None
             flag = 1
         elif flag == 0:
-            
-
+            pass
         else:
             print("No OS match found")
             return None
