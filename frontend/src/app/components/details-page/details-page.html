@@ -1,0 +1,48 @@
+<main>
+  <section class="details">
+    <a (click)="toMain()" class="back-btn">← Go Back</a>
+    <h2>Device Details</h2>
+
+    <div class="image">
+      @if(deviceId === '1') {
+      <img src="/printer.png" alt="Printer" />
+      } @if(deviceId === '2') {
+      <img src="/phone.png" alt="Phone" />
+      } @if(deviceId === '3') {
+      <img src="/laptop.png" alt="Laptop" />
+      } @if(deviceId === '4') {
+      <img src="/router.png" alt="Router" />
+      } @if(deviceId === '5') {
+      <img src="/tv.png" alt="Smart TV" />
+      }
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Device ID</th>
+          <th>IP Address</th>
+          <th>Hostname</th>
+          <th>Device Type</th>
+          <th>Ports Open</th>
+          <th>Protocol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dev of devices">
+          <td>{{ dev.ip }}</td>
+          <td>{{ dev.hostname }}</td>
+          <td>{{ dev.mac }}</td>
+          <td>
+            {{ dev.os.vendor }} {{ dev.os.family }} {{ dev.os.generation }}
+          </td>
+          <td>
+            <span *ngFor="let port of dev.ports; let last = last">
+              {{ port.port }} {{ last ? "" : ", " }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>

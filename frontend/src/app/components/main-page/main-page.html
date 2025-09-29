@@ -1,0 +1,43 @@
+<header>
+  <h1>Network Scanner</h1>
+  <button class="scan-btn">🔍 Scan</button>
+</header>
+
+<main>
+  <div class="device-grid">
+    <div class="row">
+      @for (device of Devices.slice(0, 3); track device.id) {
+      <a
+        [routerLink]="['/details', device.id]"
+        class="device-card"
+        [ngClass]="device.status"
+      >
+        <img [src]="device.img" [alt]="device.name" />
+        <h3>{{ device.name }}</h3>
+        <span class="badge" [ngClass]="device.status">
+          {{ device.message }}
+        </span>
+      </a>
+      }
+    </div>
+    <div class="row center">
+      @for (device of Devices.slice(3, 5); track device.id) {
+      <a
+        [routerLink]="['/details', device.id]"
+        class="device-card"
+        [ngClass]="device.status"
+      >
+        <img [src]="device.img" [alt]="device.name" />
+        <h3>{{ device.name }}</h3>
+        <span class="badge" [ngClass]="device.status">
+          {{ device.message }}
+        </span>
+      </a>
+      }
+    </div>
+  </div>
+</main>
+
+@if(errorAlert=== true){
+<app-alert />
+}
