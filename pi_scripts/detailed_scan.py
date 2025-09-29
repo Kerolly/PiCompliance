@@ -5,7 +5,7 @@ ensure_elevated()
 
 def get_device_info(ip):
     scanner = nmap.PortScanner()
-    options = "-sS -sV -O"
+    options = "-sS -sV -O --open"
 
     print(f"\n---> Starting detailed scan for: {ip} ...")
     print("...")
@@ -25,6 +25,7 @@ def get_device_info(ip):
 
     if host not in scanner.all_hosts():
         print(f"No information found for {host}")
+        return None, []
         # return something
     else:
         # General info
@@ -49,6 +50,7 @@ def get_device_info(ip):
 
 
 def get_os_namp(host_info):
+        flag = 0
     # --- OS Detection NMAP ---
         os_matches = host_info.get('osmatch') or []
 
@@ -60,7 +62,7 @@ def get_os_namp(host_info):
                 name = match.get('name') or "Unknown"
                 accuracy = match.get('accuracy') or "Unknown"
                 
-                if int(accuracy) >= 80:
+                if int(accuracy) >= 90:
                     os_classes = match.get('osclass') or []
 
                     if os_classes:
@@ -82,7 +84,10 @@ def get_os_namp(host_info):
                 else: 
                     print(f"OS Match found but low accuracy ({accuracy}%) : {name}")
                     return None
-            return os_info_list[-1] # return the best match
+            flag = 1
+        elif flag == 0:
+            
+
         else:
             print("No OS match found")
             return None
