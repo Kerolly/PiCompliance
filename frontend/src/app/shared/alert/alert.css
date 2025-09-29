@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  background-color: red;
+  border-radius: 10px;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  cursor: pointer;
+  animation: pulse 1.5s infinite ease-in-out;
+  box-sizing: border-box;
+}
+
+.alertText {
+  color: #fff;
+  padding: 1rem;
+}
+
+.message {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.textMic {
+  font-size: 0.8rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(255, 0, 0, 0.6);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(255, 0, 0, 0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.8rem;
+  }
+  .message {
+    font-size: 1rem;
+  }
+  .textMic {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    position: absolute;
+    top: 2rem;
+    max-width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .alertText {
+    font-size: 0.8rem;
+    padding: 0;
+  }
+  i {
+    font-size: 0.5rem;
+  }
+}
