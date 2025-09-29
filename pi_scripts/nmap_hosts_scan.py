@@ -48,4 +48,4 @@ def nmap_hosts_scan(ip_range):
     return results
 
 if __name__ == "__main__":
-    nmap_hosts_scan("10.132.86.0/24")
+    nmap_hosts_scan("192.168.27.0/24")
