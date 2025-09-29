@@ -18,5 +18,5 @@ def get_hostname_mdns(ip):
 
 
 if __name__ == "__main__":
-    windows_hostname("10.132.86.0-100")
-    #get_hostname_mdns("10.132.86.0-100")
+    # windows_hostname("10.132.86.0-100")
+    get_hostname_mdns("10.132.86.0-100")
