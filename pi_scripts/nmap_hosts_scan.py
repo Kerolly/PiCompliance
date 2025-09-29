@@ -82,7 +82,7 @@ def nmap_hosts_scan(ip_range):
 
     print("==========================================\n")
 
-    save_to_json(results, "nmap_ips_scan.json")
+    save_to_json(results, "nmap_ips_macs_scan.json")
 
     return results
 

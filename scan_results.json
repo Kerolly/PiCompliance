@@ -2,13 +2,14 @@
     {
         "ip": "192.168.27.111",
         "mac": "C6:BB:67:05:61:F9",
+        "vendor": "Unknown",
         "hostname": "Unknown",
         "os": {
-            "os_match": "Linux 5.4",
-            "vendor": "Linux",
+            "os_match": "Aruba ArubaOS-CX 10.04",
+            "vendor": "Aruba",
             "accuracy": "93",
-            "family": "Linux",
-            "generation": "5.X"
+            "family": "ArubaOS-CX",
+            "generation": "10.X"
         },
         "ports": [
             {
@@ -22,13 +23,14 @@
         ]
     },
     {
-        "ip": "192.168.27.205",
+        "ip": "192.168.27.204",
         "mac": "Not available",
-        "hostname": "Laptop",
+        "vendor": "Unknown",
+        "hostname": "DESKTOP-78HODI4",
         "os": {
-            "os_match": "Microsoft Windows 10 1607",
+            "os_match": "Microsoft Windows 10 1809 - 21H2",
             "vendor": "Microsoft",
-            "accuracy": "94",
+            "accuracy": "100",
             "family": "Windows",
             "generation": "10"
         },
@@ -58,7 +60,15 @@
                 "extrainfo": null
             },
             {
-                "port": 2869,
+                "port": 3306,
+                "state": "open",
+                "service": "mysql",
+                "product": "MySQL",
+                "version": null,
+                "extrainfo": "unauthorized"
+            },
+            {
+                "port": 5357,
                 "state": "open",
                 "service": "http",
                 "product": "Microsoft HTTPAPI httpd",

@@ -4,6 +4,7 @@ from detailed_scan import get_device_info
 from save_json import save_to_json
 from admin_privileges import ensure_elevated
 import socket
+from vendor_scanner import get_vendor
 
 ensure_elevated()
 
@@ -33,13 +34,17 @@ def scan_network():
             # Try to get hostname
             hostname = get_hostname_mdns(device.get('ip'))
         
-
+            #Try to get vendor
+            vendor=get_vendor(device.get('mac'))
+            
+                
             # Try to get detailed info
             os_info, ports_info = get_device_info(device.get('ip'))
             
             scan_results.append({
                 "ip": device.get('ip'),
                 "mac": device.get('mac'),
+                "vendor" : vendor,
                 "hostname": hostname,
                 "os": os_info,
                 "ports": ports_info

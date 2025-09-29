@@ -21,3 +21,13 @@ def load_from_json(filename):
     except Exception as e:
         print(f"Error loading JSON: {e}")
         return None
+    
+    
+def get_macs_from_json():
+    datas = load_from_json('nmap_ips_macs_scan.json') 
+    macs = []
+    for data in datas:
+        temp = data.get('mac')
+        macs.append(temp)
+    print(macs)
+    return macs
