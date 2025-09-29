@@ -9,8 +9,16 @@ def get_device_info(ip):
     print("...")
     print("---> this may take a while ....")
 
-    scanner.scan(ip, arguments=options)
+    try:
+        scanner.scan(ip, arguments=options)
+    except nmap.PortScannerError as e:
+        print(f"Error, scan failed: {e}")
+        return None
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        return None
     
+
     host = ip
 
     if host not in scanner.all_hosts():
@@ -107,4 +115,4 @@ def get_ports_info(host_info):
 
 
 if __name__ == "__main__":
-    get_device_info("10.132.86.0-10")
+    get_device_info("192.168.27.165")
