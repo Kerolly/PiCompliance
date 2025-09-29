@@ -1,8 +1,11 @@
 from nmap_hosts_scan import nmap_hosts_scan
-from get_hostname import get_hostname_mdns, windows_hostname
+from get_hostname import get_hostname_mdns
 from detailed_scan import get_device_info
 from save_json import save_to_json
+from admin_privileges import ensure_elevated
 import socket
+
+ensure_elevated()
 
 global scan_results
 scan_results = []
@@ -29,8 +32,7 @@ def scan_network():
         if counter <= int(number_of_devices):
             # Try to get hostname
             hostname = get_hostname_mdns(device.get('ip'))
-            if hostname == "Unknown":
-                hostname = windows_hostname(device.get('ip'))
+        
 
             # Try to get detailed info
             os_info, ports_info = get_device_info(device.get('ip'))
@@ -46,10 +48,10 @@ def scan_network():
         else:
             break
         
-    print(f"===================Done Scanning {number_of_devices} =======================\n")
+    print(f"=================== Done Scanning {number_of_devices} hosts =======================\n")
     
     print("--->Saving results to JSON file ...")
-    save_to_json(scan_results)
+    save_to_json(scan_results, "scan_results.json")
     print("--->Results saved to: scan_results.json\n")
     
 

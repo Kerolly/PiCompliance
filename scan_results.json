@@ -1,0 +1,70 @@
+[
+    {
+        "ip": "192.168.27.111",
+        "mac": "C6:BB:67:05:61:F9",
+        "hostname": "Unknown",
+        "os": {
+            "os_match": "Linux 5.4",
+            "vendor": "Linux",
+            "accuracy": "93",
+            "family": "Linux",
+            "generation": "5.X"
+        },
+        "ports": [
+            {
+                "port": 53,
+                "state": "open",
+                "service": "domain",
+                "product": "dnsmasq",
+                "version": "2.51",
+                "extrainfo": null
+            }
+        ]
+    },
+    {
+        "ip": "192.168.27.205",
+        "mac": "Not available",
+        "hostname": "Laptop",
+        "os": {
+            "os_match": "Microsoft Windows 10 1607",
+            "vendor": "Microsoft",
+            "accuracy": "94",
+            "family": "Windows",
+            "generation": "10"
+        },
+        "ports": [
+            {
+                "port": 135,
+                "state": "open",
+                "service": "msrpc",
+                "product": "Microsoft Windows RPC",
+                "version": null,
+                "extrainfo": null
+            },
+            {
+                "port": 139,
+                "state": "open",
+                "service": "netbios-ssn",
+                "product": "Microsoft Windows netbios-ssn",
+                "version": null,
+                "extrainfo": null
+            },
+            {
+                "port": 445,
+                "state": "open",
+                "service": "microsoft-ds",
+                "product": null,
+                "version": null,
+                "extrainfo": null
+            },
+            {
+                "port": 2869,
+                "state": "open",
+                "service": "http",
+                "product": "Microsoft HTTPAPI httpd",
+                "version": "2.0",
+                "extrainfo": "SSDP/UPnP"
+            }
+        ]
+    }
+]
