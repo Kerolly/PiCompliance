@@ -3,3 +3,4 @@ pysmb
 fastapi
 uvicorn
 paramiko
+psutil
