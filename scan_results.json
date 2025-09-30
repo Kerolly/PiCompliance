@@ -79,11 +79,13 @@
         "ports": [
             {
                 "port": 53,
+                "protocol": "tcp",
                 "state": "open",
                 "service": "domain",
                 "product": "dnsmasq",
                 "version": "2.51",
-                "extrainfo": null
+                "extrainfo": null,
+                "service_full": "domain (dnsmasq 2.51)"
             }
         ]
     },
@@ -104,43 +106,53 @@
         "ports": [
             {
                 "port": 135,
+                "protocol": "tcp",
                 "state": "open",
                 "service": "msrpc",
                 "product": "Microsoft Windows RPC",
                 "version": null,
-                "extrainfo": null
+                "extrainfo": null,
+                "service_full": "msrpc (Microsoft Windows RPC)"
             },
             {
                 "port": 139,
+                "protocol": "tcp",
                 "state": "open",
                 "service": "netbios-ssn",
                 "product": "Microsoft Windows netbios-ssn",
                 "version": null,
-                "extrainfo": null
+                "extrainfo": null,
+                "service_full": "netbios-ssn (Microsoft Windows netbios-ssn)"
             },
             {
                 "port": 445,
+                "protocol": "tcp",
                 "state": "open",
                 "service": "microsoft-ds",
                 "product": null,
                 "version": null,
-                "extrainfo": null
+                "extrainfo": null,
+                "service_full": "microsoft-ds"
             },
             {
                 "port": 3306,
+                "protocol": "tcp",
                 "state": "open",
                 "service": "mysql",
                 "product": "MySQL",
                 "version": null,
-                "extrainfo": "unauthorized"
+                "extrainfo": "unauthorized",
+                "service_full": "mysql (MySQL - unauthorized)"
             },
             {
                 "port": 5357,
+                "protocol": "tcp",
                 "state": "open",
                 "service": "http",
                 "product": "Microsoft HTTPAPI httpd",
                 "version": "2.0",
-                "extrainfo": "SSDP/UPnP"
+                "extrainfo": "SSDP/UPnP",
+                "service_full": "http (Microsoft HTTPAPI httpd 2.0 - SSDP/UPnP)"
             }
         ]
     }

@@ -1,6 +1,6 @@
 from nmap_hosts_scan import nmap_hosts_scan
 from get_hostname import get_hostname_mdns
-from detailed_scan import get_device_info
+from detailed_scan import get_device_info  # <-- Acesta va folosi versiunea modificată
 from save_json import save_to_json
 from admin_privileges import ensure_elevated
 import socket
@@ -15,17 +15,16 @@ scan_results = []
 def get_ip():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        
         s.connect(("8.8.8.8", 80))
         ip = s.getsockname()[0]
         s.close()
+        return ip  # Am adăugat return aici
     except Exception as e:
         print(f'Error:{e}')
 
 def get_cidr():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        
         s.connect(("8.8.8.8", 80))
         ip = s.getsockname()[0]
         s.close()
@@ -34,7 +33,6 @@ def get_cidr():
         return str(net)
     except Exception:
         return None
-
 
 def scan_network():
     ip_mac_list = nmap_hosts_scan(get_cidr())
@@ -46,7 +44,6 @@ def scan_network():
     if number_of_devices.strip() == "":
         number_of_devices = founded_devices
 
-
     for device in ip_mac_list:
         if counter <= int(number_of_devices):
             # Try to get hostname
@@ -54,9 +51,8 @@ def scan_network():
         
             #Try to get vendor
             vendor=get_vendor(device.get('mac'))
-            
                 
-            # Try to get detailed info
+            # Try to get detailed info (acum cu protocol detection!)
             os_info, ports_info = get_device_info(device.get('ip'))
             
             scan_results.append({
@@ -65,7 +61,7 @@ def scan_network():
                 "vendor" : vendor,
                 "hostname": hostname,
                 "os": os_info,
-                "ports": ports_info
+                "ports": ports_info  # Acum va conține și protocolul!
             })
             counter += 1
         else:
@@ -77,7 +73,6 @@ def scan_network():
     save_to_json(scan_results, "scan_results.json")
     print("--->Results saved to: scan_results.json\n")
     
-
     return ip_mac_list
 
 scan_network()
