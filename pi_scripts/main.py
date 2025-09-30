@@ -1,7 +1,7 @@
 from nmap_hosts_scan import nmap_hosts_scan
 from get_hostname import get_hostname_mdns
 from detailed_scan import get_device_info
-from save_json import save_to_json
+from save_json import save_to_json, json_to_pdf
 from admin_privileges import ensure_elevated
 from security_issues import generate_security_report
 from default_passwords import check_ssh_default_passwords
@@ -133,6 +133,11 @@ def scan_network():
     print("--->Saving results to JSON file ...")
     save_to_json(scan_results, "scan_results.json")
     print("--->Results saved to: scan_results.json\n")
+
+    #print("--->Generating PDF report ...")
+    #json_to_pdf("scan_results.json", "scan_report.pdf")
+    #print("--> Results saved to: scan_report.pdf\n")
+
     
     # Afișează sumar general de securitate
     print_security_summary(scan_results)
