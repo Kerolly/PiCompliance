@@ -77,7 +77,7 @@ def json_to_pdf(json_file, pdf_file):
     # Adaugă titlul, subtitlul și un spațiu în lista de elemente
     elements.append(title)
     elements.append(subtitle)
-    elements.append(Spacer(1, 0.25 * inch)) # Adaugă un spațiu de 0.25 inch
+    elements.append(Spacer(1, 0.15 * inch)) # Adaugă un spațiu de 0.25 inch
 
     # --- Creare Tabel (codul existent) ---
     # Header tabel
@@ -123,4 +123,4 @@ def json_to_pdf(json_file, pdf_file):
 
 
 if __name__ == "__main__":
-    json_to_pdf("scan.json", "scan_report.pdf")
+    json_to_pdf("scan_results.json", "scan_report.pdf")
