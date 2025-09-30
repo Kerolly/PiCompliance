@@ -1,59 +1,58 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { OthersStoreService } from '../../services/others';
+import { Device } from '../../services/divice';
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { Alert } from '../../shared/alert/alert';
+import { PhoneService } from '../../services/phone';
+import { PcStoreService } from '../../services/pc';
 
 @Component({
   selector: 'app-main-page',
-  imports: [CommonModule, RouterLink, Alert],
+  imports: [CommonModule],
   templateUrl: './main-page.html',
-  styleUrl: './main-page.css',
+  styleUrls: ['./main-page.css'],
 })
 export class MainPage {
   errorAlert = false;
+  othersData: Device[] = [];
 
-  Devices = [
-    {
-      id: 1,
-      name: 'Printer',
-      img: '/printer.png',
-      status: 'danger',
-      message: '⚠ Vulnerable',
-    },
-    {
-      id: 2,
-      name: 'Phone',
-      img: '/phone.png',
-      status: 'success',
-      message: '✅ Secure',
-    },
-    {
-      id: 3,
-      name: 'Laptop',
-      img: '/laptop.png',
-      status: 'success',
-      message: '✅ Secure',
-    },
-    {
-      id: 4,
-      name: 'Router',
-      img: '/router.png',
-      status: 'danger',
-      message: '⚠ Open Ports',
-    },
-    {
-      id: 5,
-      name: 'Smart TV',
-      img: '/tv.png',
-      status: 'success',
-      message: '✅ Secure',
-    },
-  ];
+  constructor(
+    private router: Router,
+    private othersStore: OthersStoreService,
+    private phoneStore: PhoneService,
+    private pcStore: PcStoreService
+  ) {}
 
-  @HostListener('document:keydown', ['$event'])
-  handleKeydown(event: KeyboardEvent) {
-    if (event.key === 'k') {
-      this.errorAlert = !this.errorAlert;
-    }
+  pc = { status: 'active', message: 'Online' };
+  phone = { status: 'inactive', message: 'Offline' };
+  other = { status: 'active', message: 'Online' };
+
+  toOthers() {
+    this.router.navigate(['/others']);
+  }
+  toPC() {
+    this.router.navigate(['/pc']);
+  }
+  toPhone() {
+    this.router.navigate(['/phone']);
+  }
+
+  // Funcția care apelează API-ul pentru Others
+  fetchOthersDevices() {
+    this.othersStore.getDevices().subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+    });
+    this.phoneStore.getDevices().subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+    });
+    this.pcStore.getDevices().subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+    });
   }
 }

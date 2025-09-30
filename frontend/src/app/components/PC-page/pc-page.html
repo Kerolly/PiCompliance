@@ -4,7 +4,7 @@
     <h2>Device Details</h2>
 
     <div class="image">
-      <img src="/tv.png" alt="Smart TV" />
+      <img src="/laptop.png" alt="Laptop" />
     </div>
 
     <table>
@@ -19,17 +19,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let dev of othersData$ | async">
+        <tr *ngFor="let dev of pcData$ | async">
           <td>{{ dev.ip }}</td>
           <td>{{ dev.mac }}</td>
           <td>{{ dev.hostname }}</td>
           <td>{{ dev.os }}</td>
+          <td></td>
           <td>
             <span *ngFor="let port of dev.ports; let last = last">
-              {{ port.port }}{{ last ? "" : ", " }}
+              {{ port.port }} {{ last ? "" : ", " }}
             </span>
           </td>
-          <td></td>
+          <td>
+            <span *ngFor="let port of dev.ports; let last = last">
+              {{ dev.vendor }} {{ last ? "" : ", " }}
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>

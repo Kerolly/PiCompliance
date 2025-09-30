@@ -1,43 +1,29 @@
 <header>
   <h1>Network Scanner</h1>
-  <button class="scan-btn">🔍 Scan</button>
+  <button (click)="fetchOthersDevices()" class="scan-btn">🔍 Scan</button>
 </header>
 
 <main>
   <div class="device-grid">
-    <div class="row">
-      @for (device of Devices.slice(0, 3); track device.id) {
-      <a
-        [routerLink]="['/details', device.id]"
-        class="device-card"
-        [ngClass]="device.status"
-      >
-        <img [src]="device.img" [alt]="device.name" />
-        <h3>{{ device.name }}</h3>
-        <span class="badge" [ngClass]="device.status">
-          {{ device.message }}
-        </span>
-      </a>
-      }
+    <!-- PC Card -->
+    <div (click)="toPC()" class="device-card" [ngClass]="pc.status">
+      <img src="/laptop.png" alt="PC" />
+      <h3>PC</h3>
+      <span class="badge" [ngClass]="pc.status">{{ pc.message }}</span>
     </div>
-    <div class="row center">
-      @for (device of Devices.slice(3, 5); track device.id) {
-      <a
-        [routerLink]="['/details', device.id]"
-        class="device-card"
-        [ngClass]="device.status"
-      >
-        <img [src]="device.img" [alt]="device.name" />
-        <h3>{{ device.name }}</h3>
-        <span class="badge" [ngClass]="device.status">
-          {{ device.message }}
-        </span>
-      </a>
-      }
+
+    <!-- Phone Card -->
+    <div (click)="toPhone()" class="device-card" [ngClass]="phone.status">
+      <img src="/phone.png" alt="Phone" />
+      <h3>Phone</h3>
+      <span class="badge" [ngClass]="phone.status">{{ phone.message }}</span>
+    </div>
+
+    <!-- Other Card -->
+    <div (click)="toOthers()" class="device-card" [ngClass]="other.status">
+      <img src="/tv.png" alt="Other Device" />
+      <h3>Other</h3>
+      <span class="badge" [ngClass]="other.status">{{ other.message }}</span>
     </div>
   </div>
 </main>
-
-@if(errorAlert=== true){
-<app-alert />
-}

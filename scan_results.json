@@ -4,7 +4,78 @@
         "mac": "C6:BB:67:05:61:F9",
         "vendor": "Unknown",
         "hostname": "Unknown",
-        "os": null,
+        "os": [
+            {
+                "os_match": "Android 10 (Linux 4.14)",
+                "vendor": "Google",
+                "accuracy": "97",
+                "family": "Android",
+                "generation": "10.X"
+            },
+            {
+                "os_match": "Android 12 (Linux 5.4)",
+                "vendor": "Google",
+                "accuracy": "96",
+                "family": "Android",
+                "generation": "12.X"
+            },
+            {
+                "os_match": "Android 10 - 12 (Linux 4.14 - 4.19)",
+                "vendor": "Linux",
+                "accuracy": "96",
+                "family": "Linux",
+                "generation": "4.X"
+            },
+            {
+                "os_match": "Linux 2.6.18",
+                "vendor": "Linux",
+                "accuracy": "96",
+                "family": "Linux",
+                "generation": "2.6.X"
+            },
+            {
+                "os_match": "Linux 2.6.32 - 3.10",
+                "vendor": "Linux",
+                "accuracy": "96",
+                "family": "Linux",
+                "generation": "2.6.X"
+            },
+            {
+                "os_match": "Android 9 (Linux 4.9)",
+                "vendor": "Google",
+                "accuracy": "95",
+                "family": "Android",
+                "generation": "9.X"
+            },
+            {
+                "os_match": "Asus RT-N10 router or AXIS 211A Network Camera (Linux 2.6)",
+                "vendor": "Linux",
+                "accuracy": "95",
+                "family": "Linux",
+                "generation": "2.6.X"
+            },
+            {
+                "os_match": "Linux 2.6.16",
+                "vendor": "Linux",
+                "accuracy": "94",
+                "family": "Linux",
+                "generation": "2.6.X"
+            },
+            {
+                "os_match": "Linux 2.6.18 - 2.6.32",
+                "vendor": "Linux",
+                "accuracy": "94",
+                "family": "Linux",
+                "generation": "2.6.X"
+            },
+            {
+                "os_match": "Linux 5.4",
+                "vendor": "Linux",
+                "accuracy": "93",
+                "family": "Linux",
+                "generation": "5.X"
+            }
+        ],
         "ports": [
             {
                 "port": 53,
@@ -21,7 +92,15 @@
         "mac": "60-E9-AA-2B-7D-31",
         "vendor": "Cloud Network Technology Singapore PTE.",
         "hostname": "DESKTOP-78HODI4",
-        "os": null,
+        "os": [
+            {
+                "os_match": "Microsoft Windows 10 1809 - 21H2",
+                "vendor": "Microsoft",
+                "accuracy": "100",
+                "family": "Windows",
+                "generation": "10"
+            }
+        ],
         "ports": [
             {
                 "port": 135,

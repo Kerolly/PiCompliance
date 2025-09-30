@@ -1,19 +1,31 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { OthersStoreService } from '../../services/others';
+import { Device } from '../../services/divice';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-details-page',
-  imports: [CommonModule],
+  selector: 'app-others-page',
+  standalone: true,
+  imports: [CommonModule, AsyncPipe],
   templateUrl: './details-page.html',
-  styleUrl: './details-page.css',
+  styleUrls: ['./details-page.css'],
 })
-export class DetailsPage {
-  deviceId: string | null;
-  devices: any;
+export class DetailsPage implements OnInit {
+  othersData$!: Observable<Device[]>;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
-    this.deviceId = this.route.snapshot.paramMap.get('id');
+  constructor(
+    private router: Router,
+    private othersStore: OthersStoreService
+  ) {}
+
+  ngOnInit() {
+    this.othersData$ = this.othersStore.devices$; // inițializare după ce constructorul rulează
+    this.othersStore.getDevices().subscribe((devices) => {
+      this.othersStore.setDevices(devices);
+    });
   }
 
   toMain() {
