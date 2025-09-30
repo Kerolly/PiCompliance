@@ -76,7 +76,7 @@ def get_os_namp(host_info):
                 })
             else: 
                 print(f"OS Match found but low accuracy ({accuracy}%) : {name}")
-                return None
+                
         flag = 1
     elif flag == 0:
         pass
