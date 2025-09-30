@@ -5,7 +5,7 @@ ensure_elevated()
 
 def get_device_info(ip):
     scanner = nmap.PortScanner()
-    options = "-sS -sV -O --open"
+    options = "-sS -sV -O -Pn --host-timeout 30s -T4 --open --top-ports 1000" 
 
     print(f"\n---> Starting detailed scan for: {ip} ...")
     print("...")
@@ -89,6 +89,9 @@ def get_os_namp(host_info):
             flag = 1
         elif flag == 0:
             pass
+
+        if flag == 1:
+            return os_info_list
         else:
             print("No OS match found")
             return None
@@ -123,4 +126,4 @@ def get_ports_info(host_info):
 
 
 if __name__ == "__main__":
-    get_device_info("192.168.27.110")
+    get_device_info("192.168.32.231")
