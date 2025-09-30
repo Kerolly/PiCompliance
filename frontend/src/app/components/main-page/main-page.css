@@ -70,6 +70,7 @@ main {
 
 .device-card {
   width: 420px;
+  cursor: pointer;
   min-height: 260px;
   display: flex;
   flex-direction: column;
@@ -117,15 +118,30 @@ main {
   font-weight: 600;
   font-size: 0.9rem;
 }
-.device-card.success {
+
+/* Device count styling */
+.device-count {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Status colorare - ACTUALIZATE pentru getter-urile tale */
+.device-card.safe {
   border-color: #16a34a;
   background: #3ceb82;
   color: #000000;
 }
-.device-card.success .badge {
+.device-card.safe .badge {
   background: #dcfce7;
   color: #15803d;
 }
+.device-card.safe .device-count {
+  color: #155724;
+  font-weight: 600;
+}
+
 .device-card.danger {
   border-color: #f15757;
   background: #f07c7c;
@@ -135,6 +151,21 @@ main {
   background: #fee2e2;
   color: #b91c1c;
 }
+.device-card.danger .device-count {
+  color: #721c24;
+  font-weight: 600;
+}
+
+.device-card.neutral {
+  border-color: #9ca3af;
+  background: #f3f4f6;
+  color: #374151;
+}
+.device-card.neutral .device-count {
+  color: #6b7280;
+  font-weight: 500;
+}
+
 .device-card.muted {
   opacity: 0.7;
 }

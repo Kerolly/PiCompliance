@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./details-page.css'],
 })
 export class DetailsPage implements OnInit {
-  othersData$!: Observable<Device[]>;
+  othersData$!: Observable<any>;
 
   constructor(
     private router: Router,

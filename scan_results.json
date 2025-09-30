@@ -41,13 +41,6 @@
                 "generation": "2.6.X"
             },
             {
-                "os_match": "Android 9 (Linux 4.9)",
-                "vendor": "Google",
-                "accuracy": "95",
-                "family": "Android",
-                "generation": "9.X"
-            },
-            {
                 "os_match": "Asus RT-N10 router or AXIS 211A Network Camera (Linux 2.6)",
                 "vendor": "Linux",
                 "accuracy": "95",
@@ -60,6 +53,13 @@
                 "accuracy": "94",
                 "family": "Linux",
                 "generation": "2.6.X"
+            },
+            {
+                "os_match": "Android 9 (Linux 4.9)",
+                "vendor": "Google",
+                "accuracy": "94",
+                "family": "Android",
+                "generation": "9.X"
             },
             {
                 "os_match": "Linux 2.6.18 - 2.6.32",
@@ -87,7 +87,48 @@
                 "extrainfo": null,
                 "service_full": "domain (dnsmasq 2.51)"
             }
-        ]
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "192.168.32.198",
+            "risk_score": 100,
+            "total_issues": 2,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (1 ports)",
+                    "description": "Found 1 open ports on 192.168.32.198",
+                    "details": {
+                        "ports": [
+                            53
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                },
+                {
+                    "type": "critical_services",
+                    "severity": "critical",
+                    "title": "Critical Services Exposed (1 services)",
+                    "description": "Found critical services exposed on 192.168.32.198",
+                    "details": {
+                        "services": [
+                            {
+                                "port": 53,
+                                "service": "domain",
+                                "recommendation": "Verify not open resolver"
+                            }
+                        ],
+                        "recommendation": "Secure these services immediately or restrict access"
+                    }
+                }
+            ],
+            "summary": "Found: 1 critical, 1 medium severity issues"
+        }
     },
     {
         "ip": "192.168.32.204",
@@ -154,6 +195,70 @@
                 "extrainfo": "SSDP/UPnP",
                 "service_full": "http (Microsoft HTTPAPI httpd 2.0 - SSDP/UPnP)"
             }
-        ]
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "192.168.32.204",
+            "risk_score": 75,
+            "total_issues": 2,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (5 ports)",
+                    "description": "Found 5 open ports on 192.168.32.204",
+                    "details": {
+                        "ports": [
+                            135,
+                            139,
+                            445,
+                            3306,
+                            5357
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                },
+                {
+                    "type": "risky_ports",
+                    "severity": "high",
+                    "title": "Risky Ports Detected (4 ports)",
+                    "description": "Found potentially dangerous open ports on 192.168.32.204",
+                    "details": {
+                        "risky_ports": [
+                            {
+                                "port": 135,
+                                "service": "msrpc",
+                                "risk_level": "high",
+                                "risk_description": "Windows RPC - potential for exploitation"
+                            },
+                            {
+                                "port": 139,
+                                "service": "netbios-ssn",
+                                "risk_level": "high",
+                                "risk_description": "File sharing vulnerabilities"
+                            },
+                            {
+                                "port": 445,
+                                "service": "microsoft-ds",
+                                "risk_level": "high",
+                                "risk_description": "File sharing - check for SMB vulnerabilities"
+                            },
+                            {
+                                "port": 3306,
+                                "service": "mysql",
+                                "risk_level": "high",
+                                "risk_description": "Database exposed to network"
+                            }
+                        ],
+                        "recommendation": "Immediately review and secure or close these ports"
+                    }
+                }
+            ],
+            "summary": "Found: 1 high, 1 medium severity issues"
+        }
     }
 ]

@@ -10,21 +10,32 @@
     <table>
       <thead>
         <tr>
-          <th>Device ID</th>
           <th>IP Address</th>
+          <th>MAC</th>
           <th>Hostname</th>
-          <th>Device Type</th>
-          <th>Ports Open</th>
+          <th>OS Match</th>
+          <th>Ports</th>
           <th>Protocol</th>
+          <th>Issues</th>
+          <th>Password Status</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let dev of pcData$ | async">
+        <tr
+          *ngFor="let dev of pcData$ | async"
+          [class.has-issues]="
+            dev.security_analysis && dev.security_analysis.total_issues > 0
+          "
+        >
           <td>{{ dev.ip }}</td>
           <td>{{ dev.mac }}</td>
           <td>{{ dev.hostname }}</td>
-          <td>{{ dev.os }}</td>
-          <td></td>
+          <td>
+            <span *ngFor="let os of dev.os; let last = last">
+              {{ os.os_match }} ({{ os.accuracy }}<span>%</span>)
+              {{ last ? "" : ", " }}
+            </span>
+          </td>
           <td>
             <span *ngFor="let port of dev.ports; let last = last">
               {{ port.port }} {{ last ? "" : ", " }}
@@ -32,7 +43,52 @@
           </td>
           <td>
             <span *ngFor="let port of dev.ports; let last = last">
-              {{ dev.vendor }} {{ last ? "" : ", " }}
+              {{ port.service }} {{ last ? "" : ", " }}
+            </span>
+          </td>
+          <td>
+            <div class="issues-container" *ngIf="dev.security_analysis">
+              <span class="risk-score"
+                >Risk: {{ dev.security_analysis.risk_score }}/100</span
+              >
+              <br />
+              <span class="issues-count"
+                >{{ dev.security_analysis.total_issues }} issues</span
+              >
+            </div>
+          </td>
+          <td>
+            <span
+              *ngIf="dev.password_security"
+              [ngClass]="{
+                'status-safe': dev.password_security.status === 'password_safe',
+                'status-unsafe':
+                  dev.password_security.status === 'default_password_unsafe',
+                'status-unknown': dev.password_security.status === 'unknown'
+              }"
+              class="password-status"
+            >
+              <span *ngIf="dev.password_security.status === 'password_safe'"
+                >✅ Safe</span
+              >
+              <span
+                *ngIf="
+                  dev.password_security.status === 'default_password_unsafe'
+                "
+                >🚨 Unsafe</span
+              >
+              <span *ngIf="dev.password_security.status === 'unknown'"
+                >❓ Unknown</span
+              >
+              <span
+                *ngIf="
+                  dev.password_security.status !== 'password_safe' &&
+                  dev.password_security.status !== 'default_password_unsafe' &&
+                  dev.password_security.status !== 'unknown'
+                "
+              >
+                {{ dev.password_security.status }}
+              </span>
             </span>
           </td>
         </tr>

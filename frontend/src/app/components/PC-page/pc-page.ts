@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pc-page.css'],
 })
 export class PcPage implements OnInit {
-  pcData$!: Observable<Device[]>;
+  pcData$!: Observable<any>;
 
   constructor(private router: Router, private pcStore: PcStoreService) {}
 

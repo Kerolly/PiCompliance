@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
   styleUrl: './phone-page.css',
 })
 export class PhonePage implements OnInit {
-  phoneData$!: Observable<Device[]>;
+  phoneData$!: Observable<any>;
 
   constructor(private router: Router, private phoneStore: PhoneService) {}
 

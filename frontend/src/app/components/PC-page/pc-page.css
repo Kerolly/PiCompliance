@@ -10,10 +10,10 @@ main {
   overflow-x: hidden;
 }
 
-/* cardul cu detalii */
+/* cardul cu detalii - MAI MARE */
 .details {
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px; /* MĂRIT de la 900px */
   margin: 2rem auto;
   padding: 2rem;
   background: #f8fbff;
@@ -33,6 +33,7 @@ main {
   border-radius: 8px;
   font-weight: 500;
   transition: background 0.3s ease;
+  cursor: pointer;
 }
 
 .back-btn:hover {
@@ -73,10 +74,11 @@ table {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   min-width: 600px; /* pentru scroll pe mobil */
+  table-layout: fixed; /* CARUTE EGALE */
 }
 
 thead {
-  background: #1e293b;
+  background: #1e293b; /* CULOAREA CERUTĂ */
   color: #fff;
 }
 
@@ -84,14 +86,67 @@ th,
 td {
   padding: 1rem 1.2rem;
   text-align: center;
+  width: 12.5%; /* 8 coloane = 100% / 8 = 12.5% fiecare */
+  word-wrap: break-word;
+  vertical-align: middle;
 }
 
 thead th {
   font-weight: 600;
+  background: #1e293b; /* CONFIRMARE CULOARE */
 }
 
 tbody tr:nth-child(even) {
   background: #f9fafb;
+}
+
+/* RÂND CU ISSUES - ROȘ DESCHIS */
+tbody tr.has-issues {
+  background-color: #fee2e2 !important; /* ROȘ DESCHIS */
+}
+
+tbody tr.has-issues:nth-child(even) {
+  background-color: #fecaca !important; /* ROȘ PUȚIN MAI ÎNCHIS PENTRU ALTERNARE */
+}
+
+.issues-container {
+  font-size: 0.9em;
+}
+
+.risk-score {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.issues-count {
+  color: #000000; /* SCHIMBAT DIN #f39c12 ÎN NEGRU */
+}
+
+.summary {
+  color: #7f8c8d;
+  font-size: 0.8em;
+}
+
+.password-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.status-safe {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-unsafe {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-unknown {
+  background-color: #fff3cd;
+  color: #856404;
 }
 
 /* badge-uri opționale */
@@ -117,8 +172,9 @@ tbody tr:nth-child(even) {
    ========================== */
 
 /* Tablete și ecrane medii */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .details {
+    max-width: 95%;
     padding: 1.5rem;
     margin: 1.5rem auto;
   }
