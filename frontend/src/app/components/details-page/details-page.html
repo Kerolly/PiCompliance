@@ -13,9 +13,8 @@
           <th>IP Address</th>
           <th>MAC</th>
           <th>Hostname</th>
-          <th>OS Match</th>
-          <th>Ports</th>
-          <th>Protocol</th>
+          <th>Ports Opened</th>
+          <th>Vuln. Proto.</th>
           <th>Issues</th>
           <th>Password Status</th>
         </tr>
@@ -29,23 +28,28 @@
         >
           <td>{{ dev.ip }}</td>
           <td>{{ dev.mac }}</td>
-          <td>{{ dev.hostname }}</td>
+          <td>{{ dev.hostname || dev.ip }}</td>
           <td>
-            <!-- MODIFICAT: Doar primul OS match, fără paranteze -->
-            <span *ngIf="dev.os && dev.os.length > 0">
-              {{ dev.os[0].os_match }}
+            <span *ngIf="dev.ports && dev.ports.length > 0; else noPorts">
+              <span *ngFor="let port of dev.ports; let last = last">
+                {{ port.port === "Unknown" ? "None" : port.port
+                }}{{ last ? "" : ", " }}
+              </span>
             </span>
-            <span *ngIf="!dev.os || dev.os.length === 0"> Unknown </span>
+            <ng-template #noPorts>
+              <span>None</span>
+            </ng-template>
           </td>
           <td>
-            <span *ngFor="let port of dev.ports; let last = last">
-              {{ port.port }} {{ last ? "" : ", " }}
+            <span *ngIf="dev.ports && dev.ports.length > 0; else noServices">
+              <span *ngFor="let port of dev.ports; let last = last">
+                {{ port.service === "Unknown" ? "None" : port.service
+                }}{{ last ? "" : ", " }}
+              </span>
             </span>
-          </td>
-          <td>
-            <span *ngFor="let port of dev.ports; let last = last">
-              {{ port.service }} {{ last ? "" : ", " }}
-            </span>
+            <ng-template #noServices>
+              <span>None</span>
+            </ng-template>
           </td>
           <td>
             <div class="issues-container" *ngIf="dev.security_analysis">
@@ -57,6 +61,7 @@
                 >{{ dev.security_analysis.total_issues }} issues</span
               >
             </div>
+            <span *ngIf="!dev.security_analysis">None</span>
           </td>
           <td>
             <span
@@ -79,7 +84,7 @@
                 >🚨 Unsafe</span
               >
               <span *ngIf="dev.password_security.status === 'unknown'"
-                >❓ Unknown</span
+                >❓ None</span
               >
               <span
                 *ngIf="
@@ -91,6 +96,7 @@
                 {{ dev.password_security.status }}
               </span>
             </span>
+            <span *ngIf="!dev.password_security">None</span>
           </td>
         </tr>
       </tbody>

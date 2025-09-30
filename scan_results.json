@@ -1,91 +1,98 @@
 [
     {
-        "ip": "192.168.32.198",
-        "mac": "C6:BB:67:05:61:F9",
+        "ip": "10.132.86.0",
+        "mac": "2C:CF:67:38:50:37",
+        "vendor": "Raspberry Pi (Trading)",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.0",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.1",
+        "mac": "8A:83:A9:14:38:80",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.1",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.102",
+        "mac": "76:1B:2A:02:59:2E",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.102",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.104",
+        "mac": "B2:24:C5:1C:BC:E0",
         "vendor": "Unknown",
         "hostname": "Unknown",
         "os": [
             {
-                "os_match": "Android 10 (Linux 4.14)",
-                "vendor": "Google",
-                "accuracy": "97",
-                "family": "Android",
-                "generation": "10.X"
-            },
-            {
-                "os_match": "Android 12 (Linux 5.4)",
-                "vendor": "Google",
-                "accuracy": "96",
-                "family": "Android",
-                "generation": "12.X"
-            },
-            {
-                "os_match": "Android 10 - 12 (Linux 4.14 - 4.19)",
-                "vendor": "Linux",
-                "accuracy": "96",
-                "family": "Linux",
-                "generation": "4.X"
-            },
-            {
-                "os_match": "Linux 2.6.18",
-                "vendor": "Linux",
-                "accuracy": "96",
-                "family": "Linux",
-                "generation": "2.6.X"
-            },
-            {
-                "os_match": "Linux 2.6.32 - 3.10",
-                "vendor": "Linux",
-                "accuracy": "96",
-                "family": "Linux",
-                "generation": "2.6.X"
-            },
-            {
-                "os_match": "Asus RT-N10 router or AXIS 211A Network Camera (Linux 2.6)",
-                "vendor": "Linux",
-                "accuracy": "95",
-                "family": "Linux",
-                "generation": "2.6.X"
-            },
-            {
-                "os_match": "Linux 2.6.16",
-                "vendor": "Linux",
-                "accuracy": "94",
-                "family": "Linux",
-                "generation": "2.6.X"
-            },
-            {
-                "os_match": "Android 9 (Linux 4.9)",
-                "vendor": "Google",
-                "accuracy": "94",
-                "family": "Android",
-                "generation": "9.X"
-            },
-            {
-                "os_match": "Linux 2.6.18 - 2.6.32",
-                "vendor": "Linux",
-                "accuracy": "94",
-                "family": "Linux",
-                "generation": "2.6.X"
-            },
-            {
-                "os_match": "Linux 5.4",
-                "vendor": "Linux",
-                "accuracy": "93",
-                "family": "Linux",
-                "generation": "5.X"
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
             }
         ],
         "ports": [
             {
-                "port": 53,
+                "port": 49152,
                 "protocol": "tcp",
                 "state": "open",
-                "service": "domain",
-                "product": "dnsmasq",
-                "version": "2.51",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
                 "extrainfo": null,
-                "service_full": "domain (dnsmasq 2.51)"
+                "service_full": "tcpwrapped"
+            },
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
             }
         ],
         "password_security": {
@@ -94,44 +101,500 @@
             "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
         },
         "security_analysis": {
-            "ip": "192.168.32.198",
-            "risk_score": 100,
+            "ip": "10.132.86.104",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.104",
+                    "details": {
+                        "ports": [
+                            49152,
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.109",
+        "mac": "BE:F1:E2:FF:80:41",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.109",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.11",
+        "mac": "22:DB:8D:98:8A:FC",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.11",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.118",
+        "mac": "02:D9:B7:31:76:A7",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.118",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.120",
+        "mac": "94:08:53:4F:83:11",
+        "vendor": "Liteon Technology",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.120",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.13",
+        "mac": "C8:94:02:0F:7C:0D",
+        "vendor": "Chongqing Fugui Electronics",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.13",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.132",
+        "mac": "12:11:02:8C:47:83",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.132",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.135",
+        "mac": "B8:1E:A4:BA:96:73",
+        "vendor": "Liteon Technology",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.135",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.140",
+        "mac": "96:79:CD:05:36:4E",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.140",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.147",
+        "mac": "8C:C6:81:9B:F5:69",
+        "vendor": "Intel Corporate",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.147",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.148",
+        "mac": "A0:78:17:71:40:F6",
+        "vendor": "Apple",
+        "hostname": "MACBOOKPRO-40F6",
+        "os": [
+            {
+                "os_match": "Apple macOS 11 (Big Sur) - 13 (Ventura) or iOS 16 (Darwin 20.6.0 - 22.4.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "macOS",
+                "generation": "11.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 5000,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "rtsp",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "rtsp"
+            },
+            {
+                "port": 7000,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "rtsp",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "rtsp"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.148",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.148",
+                    "details": {
+                        "ports": [
+                            5000,
+                            7000
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.152",
+        "mac": "DA:9D:89:5B:50:8F",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.152",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.153",
+        "mac": "36:13:9C:31:8D:F4",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.153",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (1 ports)",
+                    "description": "Found 1 open ports on 10.132.86.153",
+                    "details": {
+                        "ports": [
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.159",
+        "mac": "CC:5E:F8:9B:00:5F",
+        "vendor": "Cloud Network Technology Singapore PTE.",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [
+            {
+                "port": 3306,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "mysql",
+                "product": "MySQL",
+                "version": null,
+                "extrainfo": "unauthorized",
+                "service_full": "mysql (MySQL - unauthorized)"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.159",
+            "risk_score": 75,
             "total_issues": 2,
             "issues": [
                 {
                     "type": "open_ports",
                     "severity": "medium",
                     "title": "Open Ports Detected (1 ports)",
-                    "description": "Found 1 open ports on 192.168.32.198",
+                    "description": "Found 1 open ports on 10.132.86.159",
                     "details": {
                         "ports": [
-                            53
+                            3306
                         ],
                         "recommendation": "Review if all open ports are necessary and properly secured"
                     }
                 },
                 {
-                    "type": "critical_services",
-                    "severity": "critical",
-                    "title": "Critical Services Exposed (1 services)",
-                    "description": "Found critical services exposed on 192.168.32.198",
+                    "type": "risky_ports",
+                    "severity": "high",
+                    "title": "Risky Ports Detected (1 ports)",
+                    "description": "Found potentially dangerous open ports on 10.132.86.159",
                     "details": {
-                        "services": [
+                        "risky_ports": [
                             {
-                                "port": 53,
-                                "service": "domain",
-                                "recommendation": "Verify not open resolver"
+                                "port": 3306,
+                                "service": "mysql",
+                                "risk_level": "high",
+                                "risk_description": "Database exposed to network"
                             }
                         ],
-                        "recommendation": "Secure these services immediately or restrict access"
+                        "recommendation": "Immediately review and secure or close these ports"
                     }
                 }
             ],
-            "summary": "Found: 1 critical, 1 medium severity issues"
+            "summary": "Found: 1 high, 1 medium severity issues"
         }
     },
     {
-        "ip": "192.168.32.204",
+        "ip": "10.132.86.16",
+        "mac": "D4:6A:6A:B2:FC:0B",
+        "vendor": "Hon Hai Precision Ind.",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.16",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.163",
+        "mac": "F4:F2:6D:08:80:AB",
+        "vendor": "TP-Link Technologies",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.163",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.165",
+        "mac": "8E:00:DD:20:3E:D1",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [
+            {
+                "port": 49152,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            },
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.165",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.165",
+                    "details": {
+                        "ports": [
+                            49152,
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.172",
         "mac": "60-E9-AA-2B-7D-31",
         "vendor": "Cloud Network Technology Singapore PTE.",
         "hostname": "DESKTOP-78HODI4",
@@ -202,7 +665,7 @@
             "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
         },
         "security_analysis": {
-            "ip": "192.168.32.204",
+            "ip": "10.132.86.172",
             "risk_score": 75,
             "total_issues": 2,
             "issues": [
@@ -210,7 +673,7 @@
                     "type": "open_ports",
                     "severity": "medium",
                     "title": "Open Ports Detected (5 ports)",
-                    "description": "Found 5 open ports on 192.168.32.204",
+                    "description": "Found 5 open ports on 10.132.86.172",
                     "details": {
                         "ports": [
                             135,
@@ -226,7 +689,7 @@
                     "type": "risky_ports",
                     "severity": "high",
                     "title": "Risky Ports Detected (4 ports)",
-                    "description": "Found potentially dangerous open ports on 192.168.32.204",
+                    "description": "Found potentially dangerous open ports on 10.132.86.172",
                     "details": {
                         "risky_ports": [
                             {
@@ -259,6 +722,1588 @@
                 }
             ],
             "summary": "Found: 1 high, 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.173",
+        "mac": "60:E9:AA:E3:49:2F",
+        "vendor": "Cloud Network Technology Singapore PTE.",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.173",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.177",
+        "mac": "28:11:A8:2E:D9:39",
+        "vendor": "Intel Corporate",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.177",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.186",
+        "mac": "5A:CD:B1:72:45:63",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.186",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.19",
+        "mac": "6E:9C:40:F1:6A:49",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 49152,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            },
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.19",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.19",
+                    "details": {
+                        "ports": [
+                            49152,
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.190",
+        "mac": "2C:CF:67:38:4F:BC",
+        "vendor": "Raspberry Pi (Trading)",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Linux 4.15 - 5.19",
+                "vendor": "Linux",
+                "accuracy": "100",
+                "family": "Linux",
+                "generation": "4.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 22,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "ssh",
+                "product": "OpenSSH",
+                "version": "9.2p1 Debian 2+deb12u7",
+                "extrainfo": "protocol 2.0",
+                "service_full": "ssh (OpenSSH 9.2p1 Debian 2+deb12u7 - protocol 2.0)"
+            },
+            {
+                "port": 5900,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "vnc",
+                "product": "VNC",
+                "version": null,
+                "extrainfo": "protocol 3.8",
+                "service_full": "vnc (VNC - protocol 3.8)"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No default SSH credentials found",
+            "recommendation": "SSH appears to have secure credentials"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.190",
+            "risk_score": 100,
+            "total_issues": 3,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.190",
+                    "details": {
+                        "ports": [
+                            22,
+                            5900
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                },
+                {
+                    "type": "risky_ports",
+                    "severity": "high",
+                    "title": "Risky Ports Detected (1 ports)",
+                    "description": "Found potentially dangerous open ports on 10.132.86.190",
+                    "details": {
+                        "risky_ports": [
+                            {
+                                "port": 5900,
+                                "service": "vnc",
+                                "risk_level": "high",
+                                "risk_description": "Remote desktop - often weak authentication"
+                            }
+                        ],
+                        "recommendation": "Immediately review and secure or close these ports"
+                    }
+                },
+                {
+                    "type": "critical_services",
+                    "severity": "critical",
+                    "title": "Critical Services Exposed (1 services)",
+                    "description": "Found critical services exposed on 10.132.86.190",
+                    "details": {
+                        "services": [
+                            {
+                                "port": 22,
+                                "service": "ssh",
+                                "recommendation": "Ensure strong authentication"
+                            }
+                        ],
+                        "recommendation": "Secure these services immediately or restrict access"
+                    }
+                }
+            ],
+            "summary": "Found: 1 critical, 1 high, 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.194",
+        "mac": "62:28:89:FD:4A:1C",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [
+            {
+                "port": 3306,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "mysql",
+                "product": "MySQL",
+                "version": "8.0.40",
+                "extrainfo": null,
+                "service_full": "mysql (MySQL 8.0.40)"
+            },
+            {
+                "port": 5800,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "vnc-http",
+                "product": "TightVNC",
+                "version": null,
+                "extrainfo": "user: desktop-ndlbts9; VNC TCP port: 5900",
+                "service_full": "vnc-http (TightVNC - user: desktop-ndlbts9; VNC TCP port: 5900)"
+            },
+            {
+                "port": 5900,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "vnc",
+                "product": "VNC",
+                "version": null,
+                "extrainfo": "protocol 3.8",
+                "service_full": "vnc (VNC - protocol 3.8)"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.194",
+            "risk_score": 75,
+            "total_issues": 2,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (3 ports)",
+                    "description": "Found 3 open ports on 10.132.86.194",
+                    "details": {
+                        "ports": [
+                            3306,
+                            5800,
+                            5900
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                },
+                {
+                    "type": "risky_ports",
+                    "severity": "high",
+                    "title": "Risky Ports Detected (2 ports)",
+                    "description": "Found potentially dangerous open ports on 10.132.86.194",
+                    "details": {
+                        "risky_ports": [
+                            {
+                                "port": 3306,
+                                "service": "mysql",
+                                "risk_level": "high",
+                                "risk_description": "Database exposed to network"
+                            },
+                            {
+                                "port": 5900,
+                                "service": "vnc",
+                                "risk_level": "high",
+                                "risk_description": "Remote desktop - often weak authentication"
+                            }
+                        ],
+                        "recommendation": "Immediately review and secure or close these ports"
+                    }
+                }
+            ],
+            "summary": "Found: 1 high, 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.196",
+        "mac": "EA:D8:B6:23:8D:D8",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 49152,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            },
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.196",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.196",
+                    "details": {
+                        "ports": [
+                            49152,
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.2",
+        "mac": "EE:7F:44:23:04:F6",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.2",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.201",
+        "mac": "6E:8E:18:C3:56:4F",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.201",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (1 ports)",
+                    "description": "Found 1 open ports on 10.132.86.201",
+                    "details": {
+                        "ports": [
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.206",
+        "mac": "04:CF:4B:43:A4:9F",
+        "vendor": "Intel Corporate",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.206",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.21",
+        "mac": "AA:27:38:40:60:F6",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.21",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.213",
+        "mac": "B6:3A:C3:CE:D7:D1",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 49152,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            },
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.213",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.213",
+                    "details": {
+                        "ports": [
+                            49152,
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.214",
+        "mac": "CE:C8:3E:77:F3:18",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.214",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.216",
+        "mac": "96:0C:53:97:3C:D5",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.216",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.217",
+        "mac": "DA:24:50:BD:4A:5E",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.217",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.218",
+        "mac": "B0:99:D7:6C:4A:42",
+        "vendor": "Samsung Electronics",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.218",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.221",
+        "mac": "04:ED:33:D6:F8:9E",
+        "vendor": "Intel Corporate",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.221",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.222",
+        "mac": "F6:90:65:80:6C:CD",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.222",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.229",
+        "mac": "F2:D4:D4:24:D7:ED",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.229",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.230",
+        "mac": "F2:D0:39:0B:2E:4F",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.230",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.233",
+        "mac": "00:0A:F5:9D:2C:9A",
+        "vendor": "Airgo Networks",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Linux 4.15 - 5.19",
+                "vendor": "Linux",
+                "accuracy": "97",
+                "family": "Linux",
+                "generation": "4.X"
+            },
+            {
+                "os_match": "Android 9 - 10 (Linux 4.9 - 4.14)",
+                "vendor": "Google",
+                "accuracy": "96",
+                "family": "Android",
+                "generation": "10.X"
+            },
+            {
+                "os_match": "Linux 2.6.32",
+                "vendor": "Linux",
+                "accuracy": "96",
+                "family": "Linux",
+                "generation": "2.6.X"
+            },
+            {
+                "os_match": "Linux 3.2 - 4.14",
+                "vendor": "Linux",
+                "accuracy": "96",
+                "family": "Linux",
+                "generation": "3.X"
+            },
+            {
+                "os_match": "Linux 2.6.32 - 3.10",
+                "vendor": "Linux",
+                "accuracy": "96",
+                "family": "Linux",
+                "generation": "2.6.X"
+            },
+            {
+                "os_match": "Android 8 - 9 (Linux 3.18 - 4.4)",
+                "vendor": "Google",
+                "accuracy": "95",
+                "family": "Android",
+                "generation": "8.X"
+            },
+            {
+                "os_match": "Linux 3.2 - 3.16",
+                "vendor": "Linux",
+                "accuracy": "95",
+                "family": "Linux",
+                "generation": "3.X"
+            },
+            {
+                "os_match": "HP P2000 G3 NAS device",
+                "vendor": "HP",
+                "accuracy": "94",
+                "family": "embedded",
+                "generation": "Unknown"
+            },
+            {
+                "os_match": "Linux 2.6.32 - 2.6.35",
+                "vendor": "Linux",
+                "accuracy": "94",
+                "family": "Linux",
+                "generation": "2.6.X"
+            },
+            {
+                "os_match": "Linux 2.6.32 - 3.5",
+                "vendor": "Linux",
+                "accuracy": "94",
+                "family": "Linux",
+                "generation": "2.6.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 443,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "http",
+                "product": "nginx",
+                "version": null,
+                "extrainfo": null,
+                "service_full": "http (nginx)"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.233",
+            "risk_score": 100,
+            "total_issues": 2,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (1 ports)",
+                    "description": "Found 1 open ports on 10.132.86.233",
+                    "details": {
+                        "ports": [
+                            443
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                },
+                {
+                    "type": "critical_services",
+                    "severity": "critical",
+                    "title": "Critical Services Exposed (1 services)",
+                    "description": "Found critical services exposed on 10.132.86.233",
+                    "details": {
+                        "services": [
+                            {
+                                "port": 443,
+                                "service": "http",
+                                "recommendation": "Verify certificate and configuration"
+                            }
+                        ],
+                        "recommendation": "Secure these services immediately or restrict access"
+                    }
+                }
+            ],
+            "summary": "Found: 1 critical, 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.234",
+        "mac": "8A:A3:6B:0B:8D:EC",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.234",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.235",
+        "mac": "2E:46:9C:F8:56:FC",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.235",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.240",
+        "mac": "10:9F:41:C8:FB:C1",
+        "vendor": "Apple",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.240",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.241",
+        "mac": "E2:23:20:F4:E4:F6",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.241",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.245",
+        "mac": "EE:D7:60:E4:04:A4",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.245",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.249",
+        "mac": "C6:8E:8D:B9:54:D4",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.249",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.28",
+        "mac": "96:13:A9:27:CC:7F",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.28",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.30",
+        "mac": "9E:D0:27:24:D1:05",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 49152,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            },
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.30",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.30",
+                    "details": {
+                        "ports": [
+                            49152,
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.35",
+        "mac": "38:68:93:62:ED:B4",
+        "vendor": "Intel Corporate",
+        "hostname": "LAPTOP-866SJDU7",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.35",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.44",
+        "mac": "F8:4E:58:E8:11:6C",
+        "vendor": "Samsung Electronics",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.44",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.52",
+        "mac": "E6:C7:13:E7:85:8F",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.52",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.64",
+        "mac": "1A:74:A5:2B:A8:8E",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.64",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.69",
+        "mac": "9C:B6:D0:3E:41:F9",
+        "vendor": "Rivet Networks",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.69",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.7",
+        "mac": "32:FB:57:D7:96:97",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.7",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.74",
+        "mac": "8C:53:E6:F1:A4:29",
+        "vendor": "Wistron Neweb",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.74",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.76",
+        "mac": "AA:A8:CD:15:1C:AD",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 49152,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            },
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.76",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.76",
+                    "details": {
+                        "ports": [
+                            49152,
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.77",
+        "mac": "F4:7B:09:51:39:48",
+        "vendor": "Intel Corporate",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.77",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.79",
+        "mac": "22:12:72:EC:2B:B2",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                "vendor": "Apple",
+                "accuracy": "100",
+                "family": "iOS",
+                "generation": "15.X"
+            }
+        ],
+        "ports": [
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.79",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (1 ports)",
+                    "description": "Found 1 open ports on 10.132.86.79",
+                    "details": {
+                        "ports": [
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.8",
+        "mac": "F4:6A:DD:88:EB:D1",
+        "vendor": "Liteon Technology",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.8",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.81",
+        "mac": "A2:72:05:BD:EC:7B",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.81",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.86",
+        "mac": "E0:0A:F6:A1:F6:39",
+        "vendor": "Liteon Technology",
+        "hostname": "Unknown",
+        "os": [
+            {
+                "os_match": "Microsoft Windows 10 21H2",
+                "vendor": "Microsoft",
+                "accuracy": "98",
+                "family": "Windows",
+                "generation": "10"
+            },
+            {
+                "os_match": "Microsoft Windows 10 20H2",
+                "vendor": "Microsoft",
+                "accuracy": "97",
+                "family": "Windows",
+                "generation": "10"
+            },
+            {
+                "os_match": "Microsoft Windows 10 1709 - 21H2",
+                "vendor": "Microsoft",
+                "accuracy": "96",
+                "family": "Windows",
+                "generation": "10"
+            },
+            {
+                "os_match": "Microsoft Windows 10 1909",
+                "vendor": "Microsoft",
+                "accuracy": "95",
+                "family": "Windows",
+                "generation": "10"
+            },
+            {
+                "os_match": "Microsoft Windows Server 2019",
+                "vendor": "Microsoft",
+                "accuracy": "94",
+                "family": "Windows",
+                "generation": "2019"
+            },
+            {
+                "os_match": "Microsoft Windows 10 20H2 - 21H1",
+                "vendor": "Microsoft",
+                "accuracy": "93",
+                "family": "Windows",
+                "generation": "10"
+            },
+            {
+                "os_match": "Microsoft Windows 10 1709 - 1803",
+                "vendor": "Microsoft",
+                "accuracy": "93",
+                "family": "Windows",
+                "generation": "10"
+            },
+            {
+                "os_match": "Microsoft Windows 10 1909 - 2004",
+                "vendor": "Microsoft",
+                "accuracy": "92",
+                "family": "Windows",
+                "generation": "10"
+            },
+            {
+                "os_match": "Microsoft Windows 10 1909 - 20H2",
+                "vendor": "Microsoft",
+                "accuracy": "92",
+                "family": "Windows",
+                "generation": "10"
+            },
+            {
+                "os_match": "Microsoft Windows 10 1803",
+                "vendor": "Microsoft",
+                "accuracy": "92",
+                "family": "Windows",
+                "generation": "10"
+            }
+        ],
+        "ports": [
+            {
+                "port": 3306,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "mysql",
+                "product": "MySQL",
+                "version": null,
+                "extrainfo": "unauthorized",
+                "service_full": "mysql (MySQL - unauthorized)"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.86",
+            "risk_score": 75,
+            "total_issues": 2,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (1 ports)",
+                    "description": "Found 1 open ports on 10.132.86.86",
+                    "details": {
+                        "ports": [
+                            3306
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                },
+                {
+                    "type": "risky_ports",
+                    "severity": "high",
+                    "title": "Risky Ports Detected (1 ports)",
+                    "description": "Found potentially dangerous open ports on 10.132.86.86",
+                    "details": {
+                        "risky_ports": [
+                            {
+                                "port": 3306,
+                                "service": "mysql",
+                                "risk_level": "high",
+                                "risk_description": "Database exposed to network"
+                            }
+                        ],
+                        "recommendation": "Immediately review and secure or close these ports"
+                    }
+                }
+            ],
+            "summary": "Found: 1 high, 1 medium severity issues"
+        }
+    },
+    {
+        "ip": "10.132.86.89",
+        "mac": "F8:89:D2:68:2B:67",
+        "vendor": "Cloud Network Technology Singapore PTE.",
+        "hostname": "LAPTOP-DORINA",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.89",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.93",
+        "mac": "A0:02:A5:68:1C:80",
+        "vendor": "Intel Corporate",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.93",
+            "risk_score": 0,
+            "total_issues": 0,
+            "issues": [],
+            "summary": "No security issues detected"
+        }
+    },
+    {
+        "ip": "10.132.86.96",
+        "mac": "02:A8:36:5E:2A:35",
+        "vendor": "Unknown",
+        "hostname": "Unknown",
+        "os": null,
+        "ports": [
+            {
+                "port": 49152,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            },
+            {
+                "port": 62078,
+                "protocol": "tcp",
+                "state": "open",
+                "service": "tcpwrapped",
+                "product": null,
+                "version": null,
+                "extrainfo": null,
+                "service_full": "tcpwrapped"
+            }
+        ],
+        "password_security": {
+            "status": "password_safe",
+            "details": "No SSH service detected - No remote access vulnerability",
+            "recommendation": "\u2705 SECURE: Device has no SSH service exposed"
+        },
+        "security_analysis": {
+            "ip": "10.132.86.96",
+            "risk_score": 25,
+            "total_issues": 1,
+            "issues": [
+                {
+                    "type": "open_ports",
+                    "severity": "medium",
+                    "title": "Open Ports Detected (2 ports)",
+                    "description": "Found 2 open ports on 10.132.86.96",
+                    "details": {
+                        "ports": [
+                            49152,
+                            62078
+                        ],
+                        "recommendation": "Review if all open ports are necessary and properly secured"
+                    }
+                }
+            ],
+            "summary": "Found: 1 medium severity issues"
         }
     }
 ]
