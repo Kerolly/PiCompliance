@@ -40,51 +40,40 @@ def get_macs_from_json():
 
 
 def json_to_pdf(json_file, pdf_file):
-# Încarcă datele
     with open(json_file, "r", encoding="utf-8") as f:
         devices = json.load(f)
 
-    # Creează o listă pentru a stoca toate elementele PDF (titlu, spațiu, tabel)
     elements = []
-
-    # --- Adăugare Titlu ---
     styles = getSampleStyleSheet()
     
-    # Stil pentru titlul principal
     title_style = ParagraphStyle(
         name='Title',
         parent=styles['h1'],
         fontName='Helvetica-Bold',
-        fontSize=18,
+        fontSize=16,
         alignment=TA_CENTER,
-        spaceAfter=6  # Spațiu după titlu
+        spaceAfter=4
     )
     
-    # Stil pentru subtitlu
     subtitle_style = ParagraphStyle(
         name='Subtitle',
         parent=styles['h2'],
         fontName='Helvetica',
-        fontSize=14,
+        fontSize=12,
         alignment=TA_CENTER,
-        spaceAfter=12 # Spațiu după subtitlu
+        spaceAfter=8
     )
 
-    # Creează obiectele Paragraph pentru titlu și subtitlu
     title = Paragraph("PiCompliance - SudoPi", title_style)
     subtitle = Paragraph("Security Report", subtitle_style)
 
-    # Adaugă titlul, subtitlul și un spațiu în lista de elemente
     elements.append(title)
     elements.append(subtitle)
-    elements.append(Spacer(1, 0.15 * inch)) # Adaugă un spațiu de 0.25 inch
+    elements.append(Spacer(1, 0.1 * inch))
 
-    # --- Creare Tabel (codul existent) ---
-    # Header tabel
     data = [["IP", "MAC", "Vendor", "Hostname", "OS", "Ports", "Risk", "Summary"]]
 
     for dev in devices:
-        # ... (codul tău pentru popularea tabelului rămâne neschimbat)
         ip = dev.get("ip", "")
         mac = dev.get("mac", "")
         vendor = dev.get("vendor", "")
@@ -99,28 +88,22 @@ def json_to_pdf(json_file, pdf_file):
         summary = sec.get("summary", "")
         data.append([ip, mac, vendor, hostname, os_info, ports_str, str(risk), summary])
 
-    # PDF
     doc = SimpleDocTemplate(pdf_file, pagesize=landscape(A4))
     table = Table(data, repeatRows=1)
 
-    # Style tabel
     style = TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#4f81bd")),
         ('TEXTCOLOR', (0,0), (-1,0), colors.white),
         ('ALIGN', (0,0), (-1,-1), 'LEFT'),
         ('GRID', (0,0), (-1,-1), 0.25, colors.black),
-        ('FONTSIZE', (0,0), (-1,-1), 7),
+        ('FONTSIZE', (0,0), (-1,-1), 5),
         ('VALIGN', (0,0), (-1,-1), 'TOP'),
     ])
     table.setStyle(style)
 
-    # Adaugă tabelul la lista de elemente
     elements.append(table)
-
-    # Construiește PDF-ul folosind toate elementele
     doc.build(elements)
     print(f"PDF salvat la: {pdf_file}")
-
 
 if __name__ == "__main__":
     json_to_pdf("scan_results.json", "scan_report.pdf")
