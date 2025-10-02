@@ -11,13 +11,13 @@ PiCompliance is a network scanning and security analysis tool. It leverages `nma
 
 
 ## Table of Contents 🧭
-1.  [Features](#features-%EF%B8%8F)
-2.  [Tech Stack](#tech-stack-toolbox)
-3.  [Installation](#installation-computer)
-4.  [Usage](#usage-rocket)
-5.  [How to use](#how-to-use-gear)
-6.  [License](#license-balance_scale)
-7. [Footer](#footer-page_facing_up)
+1.  [Features]
+2.  [Tech Stack]
+3.  [Installation]
+4.  [Usage]
+5.  [How to use]
+6.  [License]
+7. [Footer]
 
 
 
