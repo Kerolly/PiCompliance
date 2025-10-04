@@ -77,7 +77,7 @@ PiCompliance is a network scanning and security analysis tool. It leverages `nma
 
     ```bash
     cd frontend
-    ng serve
+    npm start
     ```
 
     This will start the Angular development server, typically on `http://localhost:4200/`.
