@@ -105,7 +105,7 @@ The backend provides the following API endpoints:
 
 
 ## License ⚖️
-This project has no license.
+This project has MIT License.
 
 
 
