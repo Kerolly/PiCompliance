@@ -1,5 +1,5 @@
 # PiCompliance 🛡️
-[![License](https://img.shields.io/badge/license-No%20License-red.svg)](https://github.com/Kerolly/PiCompliance)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
 [![Angular](https://img.shields.io/badge/angular-20.x-brightgreen.svg)](https://angular.io/)
 
@@ -105,7 +105,7 @@ The backend provides the following API endpoints:
 
 
 ## License ⚖️
-This project has MIT License.
+This project is licensed under the [MIT License](LICENSE).
 
 
 
