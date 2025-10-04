@@ -8,7 +8,7 @@
 ## Description 📝
 PiCompliance is a network scanning and security analysis tool. It leverages `nmap` for host discovery and port scanning, identifies device types (PC, Phone, Other), and checks for potential security issues such as open ports, default passwords, and vulnerable services. The frontend is built with Angular, providing a user interface to view scan results and device details.
 
-
+This project was developed during the "Hack the Future" hackathon and was created as part of a team participating in events supported by DIH4Society && Cluj IT Cluster.
 
 ## Table of Contents 🧭
 1.  **Features**
